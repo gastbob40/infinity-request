@@ -51,7 +51,6 @@ class StudentQueue:
 
         StudentQueue.requests = [x for x in StudentQueue.requests if x.author != client_id]
 
-
     @staticmethod
     def get_place(client_id: int):
         for i in range(len(StudentQueue.requests)):

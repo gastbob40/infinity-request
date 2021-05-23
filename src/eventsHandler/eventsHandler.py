@@ -1,5 +1,4 @@
 import discord
-import yaml
 
 from src.eventsHandler.on_message.on_message import OnMessage
 

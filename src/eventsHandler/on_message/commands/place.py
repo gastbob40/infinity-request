@@ -3,7 +3,6 @@ from typing import List
 import discord
 
 from src.utils.embeds_manager import EmbedsManager
-from src.utils.request import Request
 from src.utils.student_queue import StudentQueue
 
 

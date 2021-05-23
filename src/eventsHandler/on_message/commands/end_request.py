@@ -1,10 +1,7 @@
-from typing import List
-
 import discord
-
 import yaml
+
 from src.utils.embeds_manager import EmbedsManager
-from src.utils.student_queue import StudentQueue
 
 with open('run/config/tokens.yml', 'r') as file:
     tokens = yaml.safe_load(file)

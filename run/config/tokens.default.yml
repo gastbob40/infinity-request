@@ -1,0 +1,3 @@
+discord_token: ~          # A discord bot token
+request_channel_id: ~
+guild_id: ~

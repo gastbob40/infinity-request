@@ -1,3 +1,4 @@
 discord_token: ~          # A discord bot token
-request_channel_id: ~
-guild_id: ~
+request_channel_id: ~     # The channel ID to put request message of user
+guild_id: ~               # The ID of the guild where the bot should be use
+teacher_ids: ~            # A *list* of discord ID of teachers

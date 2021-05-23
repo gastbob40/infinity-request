@@ -18,6 +18,14 @@ Here is the list of available commands:
 - `!enable` [TEACHER] allows you to open the queue
 - `!disable` [TEACHER] allows you to close the queue
 
+This project is part of the Infinity suite. You can find in particular:
+- Infinity News:
+    - Android: https://play.google.com/store/apps/details?id=com.gastbob40.infinitynews
+    - iOS: https://apps.apple.com/us/app/infinity-news/id1567450298
+    
+- Infinity Chronos:
+    - Android: https://play.google.com/store/apps/details?id=com.gastbob40.infinitychronos
+
 ## Getting started
 
 1. **First, you will have to clone the project.**

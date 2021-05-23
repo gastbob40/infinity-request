@@ -15,8 +15,8 @@ Here is the list of available commands:
 - `!request <content>` allows you to start a request
 - `!cancel`allows you to cancel a request
 - `!place` allows you to know your place in the queue
-- `!enable` [MOD] allows you to open the queue
-- `!disable` [MOD] allows you to close the queue
+- `!enable` [TEACHER] allows you to open the queue
+- `!disable` [TEACHER] allows you to close the queue
 
 ## Getting started
 

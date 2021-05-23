@@ -26,10 +26,10 @@ async def make_request(client: discord.Client, message: discord.Message, args: L
                 "Error, you have already done a request.\nYou can cancel it by typing `!cancel`")
         )
 
-#Create request object
+    # Create request object
     request = Request(author_id, ' '.join(args))
 
-#Step to sent
+    # Step to sent
     msg = await client.get_channel(tokens['request_channel_id']).send(
         embed=EmbedsManager.complete_embed(
             f"New request from {message.author.display_name} :\n{request.message}",
@@ -37,10 +37,10 @@ async def make_request(client: discord.Client, message: discord.Message, args: L
         )
     )
 
-#Add msg id
+    # Add msg id
     request.set_message_id(msg.id)
 
-#Send message to user
+    # Send message to user
     place = StudentQueue.add_request(request)
     await message.channel.send(
         embed=EmbedsManager.complete_embed(
@@ -49,11 +49,11 @@ async def make_request(client: discord.Client, message: discord.Message, args: L
         )
     )
 
-#Add reaction
+    # Add reaction
     await msg.add_reaction('🆗')
 
     def check(reaction, user):
-        return str(reaction.emoji) == '🆗' and user.bot == False and reaction.message.id == msg.id
+        return str(reaction.emoji) == '🆗' and not user.bot and reaction.message.id == msg.id
 
     reaction, user = await client.wait_for('reaction_add', check=check)
     await msg.clear_reaction('🆗')
@@ -61,7 +61,7 @@ async def make_request(client: discord.Client, message: discord.Message, args: L
 
     guild: discord.Guild = client.get_guild(tokens['guild_id'])
 
-#Create permission
+    # Create permission
     permissions = {
         guild.default_role: discord.PermissionOverwrite(
             read_messages=False,
@@ -79,11 +79,10 @@ async def make_request(client: discord.Client, message: discord.Message, args: L
             manage_messages=True
         )
 
-
     permissions[client.user] = discord.PermissionOverwrite(
-            read_messages=True,
-            send_messages=True,
-            manage_messages=True
+        read_messages=True,
+        send_messages=True,
+        manage_messages=True
     )
     category: discord.CategoryChannel = await guild.create_category(f"debug-{message.author.display_name}",
                                                                     overwrites=permissions, position=1)

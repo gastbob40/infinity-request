@@ -1,5 +1,6 @@
 import discord
 import yaml
+
 from src.eventsHandler.eventsHandler import EventsHandler
 
 with open('run/config/tokens.yml', 'r') as file:
